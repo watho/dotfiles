@@ -40,6 +40,7 @@ NeoBundle 'Shougo/unite.vim'
 " NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'edkolev/promptline.vim'
 NeoBundle 'Valloric/YouCompleteMe', {'build' : {'unix' : './install.sh --clang-completer', }, }
+NeoBundle 'rking/ag.vim'
 
 " Define your vim configuration
 " map q: :q
