@@ -3,7 +3,7 @@ call vimrc#before()
 
 " Define plugins you use
 "       NeoBundle 'kien/ctrlp.vim'
-"NeoBundle 
+"NeoBundle
 NeoBundle 'bling/vim-airline'
 let g:airline_theme='powerlineish'
 " let g:airline_left_sep=''
