@@ -35,8 +35,8 @@ fi
 
 # Update APT.
 e_header "Updating APT"
-sudo apt-get -qq update
-sudo apt-get -qq dist-upgrade
+sudo apt-get update
+sudo apt-get dist-upgrade
 
 # Install APT packages.
 packages=(

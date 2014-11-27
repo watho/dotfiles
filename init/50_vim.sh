@@ -2,7 +2,7 @@
 mkdir -p $DOTFILES/caches/vim
 mkdir -p $DOTFILES/.link/bundle
 
-git clone https://github.com/Shougo/neobundle.vim $DOTFILES/.lin/bundle/neobundle.vim
+git clone https://github.com/Shougo/neobundle.vim $DOTFILES/link/.vim/bundle/neobundle.vim
 
 
 # Download Vim plugins.
