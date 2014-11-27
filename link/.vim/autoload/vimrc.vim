@@ -274,7 +274,7 @@ set shortmess+=I
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'sheerun/vim-polyglot'
@@ -283,6 +283,8 @@ NeoBundle 'sjl/vitality.vim'
 endfunction
 
 function! vimrc#after(...) abort
+
+call neobundle#end()
 
 " Set file detection back on after updating runtimepath by NeuBundle.
 filetype plugin indent on
