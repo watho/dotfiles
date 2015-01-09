@@ -21,34 +21,17 @@ fi
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# Switch between already-downloaded node versions.
-function node_ver() {
-  (
-    ver="${1#v}"
-    nodes=()
-    if [[ ! -e "/usr/local/src/node-v$ver" ]]; then
-      shopt -s extglob
-      shopt -s nullglob
-      cd "/usr/local/src"
-      eval 'for n in node-v*+([0-9]).+([0-9]).+([0-9]); do nodes=("${nodes[@]}" "${n#node-}"); done'
-      [[ "$1" ]] && echo "Node.js version \"$1\" not found."
-      echo "Valid versions are: ${nodes[*]}"
-      [[ "$(type -P node)" ]] && echo "Current version is: $(node --version)"
-      exit 1
-    fi
-    cd "/usr/local/src/node-v$ver"
-    sudo make install >/dev/null 2>&1 &&
-    echo "Node.js $(node --version) installed." ||
-    echo "Error, $(node --version) installed."
-  )
-}
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+      PATH="$HOME/bin:$PATH"
+fi
 
 # fe [FUZZY PATTERN] - Open the selected file with the default editor
 #   - Bypass fuzzy finder if there's only one match (--select-1)
 #   - Exit if there's no match (--exit-0)
 fe() {
   local file
-  file=$(fzf --query="$1" --select-1 --exit-0)
+  file=$(fzf -e --query="$1" --select-1 --exit-0)
   [ -n "$file" ] && ${EDITOR:-vim} "$file"
 }
 
@@ -56,13 +39,13 @@ fe() {
 fd() {
   local dir
   dir=$(find ${1:-*} -path '*/\.*' -prune \
-                  -o -type d -print 2> /dev/null | fzf +m) &&
+                  -o -type d -print 2> /dev/null | fzf -e +m) &&
   cd "$dir"
 }
 
 # fh - repeat history
 fh() {
-  eval $(([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s | sed 's/ *[0-9]* *//')
+  eval $(([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf -e +s | sed 's/ *[0-9]* *//')
 }
 
 # fkill - kill process
