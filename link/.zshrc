@@ -19,4 +19,6 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen theme agnoster
 
 # Tell antigen that youre are done.
-# antigen apply
+antigen apply
+
+setopt HIST_IGNORE_SPACE
