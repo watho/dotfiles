@@ -9,6 +9,7 @@ antigen bundle python
 antigen bundle virtualenv
 
 
+antigen bundle sudo
 antigen bundle rupa/z
 antigen bundle command-not-found
 antigen bundle ssh-agent
@@ -21,4 +22,9 @@ antigen theme agnoster
 # Tell antigen that youre are done.
 antigen apply
 
+#history
 setopt HIST_IGNORE_SPACE
+setopt  SHARE_HISTORY
+
+bindkey -v
+compinit
