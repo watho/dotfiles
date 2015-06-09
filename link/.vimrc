@@ -41,6 +41,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'edkolev/promptline.vim'
 NeoBundle 'Valloric/YouCompleteMe', {'build' : {'unix' : './install.sh --clang-completer', }, }
 NeoBundle 'rking/ag.vim'
+NeoBundle 'vim-scripts/dbext.vim'
 
 " Define your vim configuration
 " map q: :q
@@ -50,7 +51,7 @@ call vimrc#after()
 
 
 set foldenable
-set foldlevelstart=1
+set foldlevelstart=99
 set foldnestmax=20
 let g:xml_syntax_folding=1
 au FileType xml setlocal foldmethod=syntax
@@ -72,6 +73,10 @@ vmap <C-v> <Plug>(expand_region_shrink)
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
+
+" Move between splitwindows with CTRL+J CTRL+K
+map <C-J> <C-W>j
+map <C-K> <C-W>k
 
 " Sudo write
 command W w !sudo tee % > /dev/null
@@ -101,3 +106,10 @@ function! s:unite_settings()
   imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
 endfunction
 nnoremap <C-p> :Unite file_rec/async<cr>
+
+" MySql-Editor dbext.vim
+let g:dbext_default_profile_mySQL = 'type=MYSQL:user=root:passwd=surf:dbname=fs_test'
+let g:dbext_default_profile = 'mySQL'
+
+" Reloading .vimrc after changing it
+au! BufWritePost .vimrc source %
