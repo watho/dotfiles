@@ -5,6 +5,7 @@ Forked!
 ## Installation
 
 ```sh
+export github_user=watho
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/watho/dotfiles/master/bin/dotfiles)" && source ~/.bashrc
 ```
 
