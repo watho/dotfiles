@@ -1,3 +1,5 @@
+#autoload -U compinit && compinit
+
 source $DOTFILES/link/antigen/antigen.zsh
 
 antigen use oh-my-zsh
@@ -25,6 +27,7 @@ antigen apply
 #history
 setopt HIST_IGNORE_SPACE
 setopt  SHARE_HISTORY
+setopt HISTSIZE=10000
+setopt HIST_IGNORE_ALL_DUPS
 
 bindkey -v
-compinit
