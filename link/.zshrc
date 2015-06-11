@@ -27,7 +27,7 @@ antigen apply
 #history
 setopt HIST_IGNORE_SPACE
 setopt  SHARE_HISTORY
-setopt HISTSIZE=10000
+#setopt HISTSIZE=10000
 setopt HIST_IGNORE_ALL_DUPS
 
-bindkey -v
+#bindkey -v
