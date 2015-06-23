@@ -44,14 +44,11 @@ packages=(
   cowsay
   git-core
   htop
-  id3tool
-  libssl-dev
-  mercurial
-  nmap
   silversearcher-ag
   sl
-  telnet
   tree
+  zsh
+  htop
 )
 
 packages=($(setdiff "${packages[*]}" "$(dpkg --get-selections | grep -v deinstall | awk '{print $1}')"))
