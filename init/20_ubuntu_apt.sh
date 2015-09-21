@@ -47,8 +47,8 @@ packages=(
   silversearcher-ag
   sl
   tree
-  zsh
   htop
+  iotop
 )
 
 packages=($(setdiff "${packages[*]}" "$(dpkg --get-selections | grep -v deinstall | awk '{print $1}')"))
