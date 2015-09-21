@@ -49,6 +49,7 @@ packages=(
   tree
   htop
   iotop
+  software-properties-common
 )
 
 packages=($(setdiff "${packages[*]}" "$(dpkg --get-selections | grep -v deinstall | awk '{print $1}')"))
