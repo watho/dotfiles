@@ -13,6 +13,9 @@
 
 /link/.fzf
 
+# Historyfiles
+/link/.vim/.netrwhist
+
 # Don't commit rbenv temp files.
 /link/.rbenv/shims/
 /link/.rbenv/versions/
