@@ -22,4 +22,5 @@ function dotfiles() {
   $DOTFILES/bin/dotfiles "$@" && src
 }
 
+src
 unset GREP_OPTIONS
