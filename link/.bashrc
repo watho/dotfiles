@@ -24,3 +24,4 @@ function dotfiles() {
 
 src
 unset GREP_OPTIONS
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
