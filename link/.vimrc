@@ -43,7 +43,7 @@ NeoBundle 'Valloric/YouCompleteMe', {'build' : {'unix' : './install.sh --clang-c
 NeoBundle 'rking/ag.vim'
 NeoBundle 'vim-scripts/dbext.vim'
 NeoBundle 'will133/vim-dirdiff'
-let g:DirDiffDynamicDiffText = 1
+  let g:DirDiffDynamicDiffText = 1
 
 " Define your vim configuration
 " map q: :q
@@ -59,6 +59,10 @@ let g:xml_syntax_folding=1
 au FileType xml setlocal foldmethod=syntax
 
 set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
+
+" integrating fzf
+set rtp+=~/.fzf
+
 
 let mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR>
