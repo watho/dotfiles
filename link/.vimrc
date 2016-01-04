@@ -42,6 +42,8 @@ NeoBundle 'edkolev/promptline.vim'
 NeoBundle 'Valloric/YouCompleteMe', {'build' : {'unix' : './install.sh --clang-completer', }, }
 NeoBundle 'rking/ag.vim'
 NeoBundle 'vim-scripts/dbext.vim'
+NeoBundle 'will133/vim-dirdiff'
+let g:DirDiffDynamicDiffText = 1
 
 " Define your vim configuration
 " map q: :q
