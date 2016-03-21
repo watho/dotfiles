@@ -49,6 +49,8 @@ packages=(
   htop
   iotop
   software-properties-common
+  cmake
+  python-dev
 )
 
 packages=($(setdiff "${packages[*]}" "$(dpkg --get-selections | grep -v deinstall | awk '{print $1}')"))
