@@ -26,17 +26,17 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'mhinz/vim-signify'
 NeoBundle 'xolox/vim-misc'
 NeoBundle 'xolox/vim-easytags'
-" NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'Shougo/vimproc.vim', {
-      \ 'build' : {
-      \     'windows' : 'tools\\update-dll-mingw',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \    },
-      \ }
-NeoBundle 'Shougo/unite.vim'
+NeoBundle 'kien/ctrlp.vim'
+" NeoBundle 'Shougo/neomru.vim'
+" NeoBundle 'Shougo/vimproc.vim', {
+"      \ 'build' : {
+"      \     'windows' : 'tools\\update-dll-mingw',
+"      \     'cygwin' : 'make -f make_cygwin.mak',
+"      \     'mac' : 'make -f make_mac.mak',
+"      \     'unix' : 'make -f make_unix.mak',
+"      \    },
+"      \ }
+"NeoBundle 'Shougo/unite.vim'
 " NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'edkolev/promptline.vim'
 NeoBundle 'Valloric/YouCompleteMe', {'build' : {'unix' : './install.sh --clang-completer', }, }
@@ -61,7 +61,7 @@ au FileType xml setlocal foldmethod=syntax
 set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 
 " integrating fzf
-set rtp+=~/.fzf
+"set rtp+=~/.fzf
 
 
 let mapleader = "\<Space>"
@@ -92,26 +92,30 @@ cmap w!! w !sudo tee >/dev/null %
 noremap <C-c> "+y
 noremap <C-v> "+p
 
+"CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
 " Unite
-let g:unite_source_history_yank_enable = 1
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
-nnoremap <leader>f :<C-u>Unite -no-split -quick-match -buffer-name=files   -start-insert file<cr>
-nnoremap <leader>r :<C-u>Unite -no-split -quick-match -buffer-name=mru     -start-insert file_mru<cr>
-nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
-nnoremap <leader>y :<C-u>Unite -no-split -quick-match -buffer-name=yank    history/yank<cr>
-nnoremap <leader>s :<C-u>Unite -no-split -quick-match buffer<cr>
+"let g:unite_source_history_yank_enable = 1
+"call unite#filters#matcher_default#use(['matcher_fuzzy'])
+"nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
+"nnoremap <leader>f :<C-u>Unite -no-split -quick-match -buffer-name=files   -start-insert file<cr>
+"nnoremap <leader>r :<C-u>Unite -no-split -quick-match -buffer-name=mru     -start-insert file_mru<cr>
+"nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
+"nnoremap <leader>y :<C-u>Unite -no-split -quick-match -buffer-name=yank    history/yank<cr>
+"nnoremap <leader>s :<C-u>Unite -no-split -quick-match buffer<cr>
 
 " Custom mappings for the unite buffer
-autocmd FileType unite call s:unite_settings()
-function! s:unite_settings()
-  " Play nice with supertab
-  let b:SuperTabDisabled=1
-  " Enable navigation with control-j and control-k in insert mode
-  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
-  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
-endfunction
-nnoremap <C-p> :Unite file_rec/async<cr>
+"autocmd FileType unite call s:unite_settings()
+"function! s:unite_settings()
+"  " Play nice with supertab
+"  let b:SuperTabDisabled=1
+"  " Enable navigation with control-j and control-k in insert mode
+"  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
+"  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
+"endfunction
+"nnoremap <C-p> :Unite file_rec/async<cr>
 
 " MySql-Editor dbext.vim
 let g:dbext_default_profile_mySQL = 'type=MYSQL:user=root:passwd=surf:dbname=fs_test'
