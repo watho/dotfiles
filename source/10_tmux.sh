@@ -8,3 +8,4 @@
 #    tmux attach || break
 #  done
 #fi
+alias tmux='tmux -2'
