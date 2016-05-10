@@ -61,3 +61,6 @@ Desktop.ini
 .swo
 .*.swp
 .*.swo
+
+# Subversion
+.svn
