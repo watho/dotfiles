@@ -2,8 +2,6 @@
 call vimrc#before()
 
 " Define plugins you use
-"       NeoBundle 'kien/ctrlp.vim'
-"NeoBundle
 NeoBundle 'bling/vim-airline'
 let g:airline_theme='powerlineish'
 " let g:airline_left_sep=''
@@ -42,6 +40,8 @@ NeoBundle 'edkolev/promptline.vim'
 NeoBundle 'Valloric/YouCompleteMe', {'build' : {'unix' : './install.sh --clang-completer', }, }
 NeoBundle 'rking/ag.vim'
 NeoBundle 'vim-scripts/dbext.vim'
+" qml syntax highlighting
+NeoBundle 'peterhoeg/vim-qml'
 NeoBundle 'will133/vim-dirdiff'
   let g:DirDiffDynamicDiffText = 1
 
