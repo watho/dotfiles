@@ -2,7 +2,8 @@
 call vimrc#before()
 
 " Define plugins you use
-NeoBundle 'bling/vim-airline'
+NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
 let g:airline_theme='powerlineish'
 " let g:airline_left_sep=''
 " let g:airline_right_sep=''
@@ -25,6 +26,8 @@ NeoBundle 'mhinz/vim-signify'
 NeoBundle 'xolox/vim-misc'
 NeoBundle 'xolox/vim-easytags'
 NeoBundle 'kien/ctrlp.vim'
+" Git Status in erster Spalte
+" NeoBundle 'airblade/vim-gitgutter'
 " NeoBundle 'Shougo/neomru.vim'
 " NeoBundle 'Shougo/vimproc.vim', {
 "      \ 'build' : {
@@ -36,14 +39,14 @@ NeoBundle 'kien/ctrlp.vim'
 "      \ }
 "NeoBundle 'Shougo/unite.vim'
 " NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'edkolev/promptline.vim'
+"NeoBundle 'edkolev/promptline.vim'
 NeoBundle 'Valloric/YouCompleteMe', {'build' : {'unix' : './install.sh --clang-completer', }, }
 NeoBundle 'rking/ag.vim'
 NeoBundle 'vim-scripts/dbext.vim'
 " qml syntax highlighting
-NeoBundle 'peterhoeg/vim-qml'
-NeoBundle 'will133/vim-dirdiff'
-  let g:DirDiffDynamicDiffText = 1
+"NeoBundle 'peterhoeg/vim-qml'
+"NeoBundle 'will133/vim-dirdiff'
+"  let g:DirDiffDynamicDiffText = 1
 
 " Define your vim configuration
 " map q: :q
@@ -65,6 +68,15 @@ set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 
 
 let mapleader = "\<Space>"
+
+" map [ and ] to < and >, its easier on german keyboard layouts
+nmap < [
+nmap > ]
+omap < [
+omap > ]
+xmap < [
+xmap > ]
+
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :wq<CR>
 vmap <Leader>y "+y
@@ -85,7 +97,7 @@ map <C-J> <C-W>j
 map <C-K> <C-W>k
 
 " Sudo write
-command W w !sudo tee % > /dev/null
+"command W w !sudo tee % > /dev/null
 cmap w!! w !sudo tee >/dev/null %
 
 "Copy and Paste
@@ -95,27 +107,6 @@ noremap <C-v> "+p
 "CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-
-" Unite
-"let g:unite_source_history_yank_enable = 1
-"call unite#filters#matcher_default#use(['matcher_fuzzy'])
-"nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
-"nnoremap <leader>f :<C-u>Unite -no-split -quick-match -buffer-name=files   -start-insert file<cr>
-"nnoremap <leader>r :<C-u>Unite -no-split -quick-match -buffer-name=mru     -start-insert file_mru<cr>
-"nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
-"nnoremap <leader>y :<C-u>Unite -no-split -quick-match -buffer-name=yank    history/yank<cr>
-"nnoremap <leader>s :<C-u>Unite -no-split -quick-match buffer<cr>
-
-" Custom mappings for the unite buffer
-"autocmd FileType unite call s:unite_settings()
-"function! s:unite_settings()
-"  " Play nice with supertab
-"  let b:SuperTabDisabled=1
-"  " Enable navigation with control-j and control-k in insert mode
-"  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
-"  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
-"endfunction
-"nnoremap <C-p> :Unite file_rec/async<cr>
 
 " MySql-Editor dbext.vim
 let g:dbext_default_profile_mySQL = 'type=MYSQL:user=root:passwd=surf:dbname=fs_test'
