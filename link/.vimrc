@@ -1,9 +1,9 @@
-" Load sensible defaults and setup NeoBundle
-call vimrc#before()
+" Load sensible defaults and setup vim-plug
+call plug#begin()
 
 " Define plugins you use
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme='powerlineish'
 " let g:airline_left_sep=''
 " let g:airline_right_sep=''
@@ -15,21 +15,21 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_symbols.space = "\ua0"
 
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'tpope/vim-commentary'
-NeoBundle 'terryma/vim-expand-region'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-sleuth'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'mhinz/vim-signify'
-NeoBundle 'xolox/vim-misc'
-NeoBundle 'xolox/vim-easytags'
-NeoBundle 'kien/ctrlp.vim'
-" Git Status in erster Spalte
-" NeoBundle 'airblade/vim-gitgutter'
-" NeoBundle 'Shougo/neomru.vim'
-" NeoBundle 'Shougo/vimproc.vim', {
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
+Plug 'terryma/vim-expand-region'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-surround'
+Plug 'mhinz/vim-signify'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-easytags'
+Plug 'kien/ctrlp.vim'
+" Git Status in erster Spalte Macht irgendwie schin ein anderes Plugin
+" Plug 'airblade/vim-gitgutter'
+" Plug 'Shougo/neomru.vim'
+" Plug 'Shougo/vimproc.vim', {
 "      \ 'build' : {
 "      \     'windows' : 'tools\\update-dll-mingw',
 "      \     'cygwin' : 'make -f make_cygwin.mak',
@@ -37,22 +37,22 @@ NeoBundle 'kien/ctrlp.vim'
 "      \     'unix' : 'make -f make_unix.mak',
 "      \    },
 "      \ }
-"NeoBundle 'Shougo/unite.vim'
-" NeoBundle 'scrooloose/nerdtree'
-"NeoBundle 'edkolev/promptline.vim'
-NeoBundle 'Valloric/YouCompleteMe', {'build' : {'unix' : './install.sh --clang-completer', }, }
-NeoBundle 'rking/ag.vim'
-NeoBundle 'vim-scripts/dbext.vim'
+"Plug 'Shougo/unite.vim'
+" Plug 'scrooloose/nerdtree'
+"Plug 'edkolev/promptline.vim'
+"Plug 'Valloric/YouCompleteMe', {'build' : {'unix' : './install.sh --clang-completer', }, }
+Plug 'rking/ag.vim'
+"Plug 'vim-scripts/dbext.vim'
 " qml syntax highlighting
-"NeoBundle 'peterhoeg/vim-qml'
-"NeoBundle 'will133/vim-dirdiff'
+"Plug 'peterhoeg/vim-qml'
+"Plug 'will133/vim-dirdiff'
 "  let g:DirDiffDynamicDiffText = 1
 
 " Define your vim configuration
 " map q: :q
 
 " Load plugins
-call vimrc#after()
+call plug#end()
 
 
 set foldenable

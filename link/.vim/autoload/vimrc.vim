@@ -240,8 +240,8 @@ noremap gV `[v`]
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " Enable saving by `Ctrl-s`
-nnoremap <C-s> :w<CR>
-inoremap <C-s> <ESC>:w<CR>
+" nnoremap <C-s> :w<CR>
+" inoremap <C-s> <ESC>:w<CR>
 
 " Use Q to intelligently close a window
 " (if there are multiple windows into the same buffer)
@@ -271,25 +271,25 @@ nnoremap <C-w>v <C-w>v<C-w>w
 set shortmess+=I
 
 " Use neobundle for package managing
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-call neobundle#begin(expand('~/.vim/bundle/'))
+" if has('vim_starting')
+"  set runtimepath+=~/.vim/bundle/neobundle.vim/
+" endif
+" call neobundle#begin(expand('~/.vim/bundle/'))
 
-NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'sheerun/vim-polyglot'
-NeoBundle 'sjl/vitality.vim'
+" NeoBundleFetch 'Shougo/neobundle.vim'
+" NeoBundle 'sheerun/vim-polyglot'
+" NeoBundle 'sjl/vitality.vim'
 
-endfunction
+" endfunction
 
-function! vimrc#after(...) abort
+" function! vimrc#after(...) abort
 
-call neobundle#end()
+" call neobundle#end()
 
 " Set file detection back on after updating runtimepath by NeuBundle.
 filetype plugin indent on
 
 " Check if all bundles are installed.
-NeoBundleCheck
+"NeoBundleCheck
 
 endfunction

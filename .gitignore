@@ -10,6 +10,7 @@
 /link/.ssh/environment*
 
 /link/.fzf
+/link/.vim/plugged
 
 # Historyfiles
 /link/.vim/.netrwhist
