@@ -7,7 +7,7 @@ shopt -s histverify
 
 # Entries beginning with space aren't added into history, and duplicate
 # entries will be erased (leaving the most recent entry).
-export HISTCONTROL="ignorespace:erasedups"
+export HISTCONTROL="ignoreboth:erasedups"
 # Give history timestamps.
 export HISTTIMEFORMAT="[%F %T] "
 # Lots o' history.
@@ -21,6 +21,7 @@ alias r="fc -s"
 export HH_CONFIG=hicolor         # get more colors
 shopt -s histappend              # append new history items to .bash_history
 export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"   # mem/file sync
+#export PROMPT_COMMAND="history -a; ${PROMPT_COMMAND}"   # mem/file sync
 # if this is interactive shell, then bind hh to Ctrl-r
 if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh \C-j"'; fi
 

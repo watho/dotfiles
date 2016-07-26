@@ -1,6 +1,6 @@
 # Backups, swaps and undos are stored here.
 mkdir -p $DOTFILES/caches/vim
-mkdir -p $DOTFILES/.link/bundle
+mkdir -p $DOTFILES/link/bundle
 
 git clone https://github.com/Shougo/neobundle.vim $DOTFILES/link/.vim/bundle/neobundle.vim
 

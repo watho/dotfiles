@@ -1,6 +1,5 @@
 # Compiled source #
 ###################
-*.com
 *.class
 *.dll
 *.exe
@@ -12,7 +11,6 @@
 # It's better to unpack these files and commit the raw source because
 # git has its own built in compression methods.
 *.7z
-*.jar
 *.rar
 *.zip
 *.gz
@@ -35,12 +33,12 @@
 # Logs and databases #
 ######################
 *.log
-*.sql
 *.sqlite
 
 # OS generated files #
 ######################
 .DS_Store
+.directory
 
 # Thumbnails
 ._*
@@ -63,3 +61,6 @@ Desktop.ini
 .swo
 .*.swp
 .*.swo
+
+# Subversion
+.svn

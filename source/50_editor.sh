@@ -1,19 +1,10 @@
 # Editing
 
-if [[ ! "$SSH_TTY" && "$OSTYPE" =~ ^darwin ]]; then
-  export EDITOR='subl -w'
-  export LESSEDIT='subl %f'
-  alias q='subl'
-else
-  export EDITOR=$(type vim nano pico vi 2>/dev/null | sed 's/ .*$//;q')
-  alias q="$EDITOR -w -z"
-fi
+
+  export EDITOR='vim'
+
 
 export VISUAL="$EDITOR"
-
-alias q.='q .'
-
-function qs() {
-  pwd | perl -ne"s#^$(echo $DOTFILES)## && exit 1" && cd $DOTFILES
-  q $DOTFILES
-}
+alias q="$EDITOR"
+alias qv="q $DOTFILES/link/.{,g}vimrc +'cd $DOTFILES'"
+alias qs="q $DOTFILES"

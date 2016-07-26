@@ -5,18 +5,15 @@
 # Top secret stuff!
 /link/.ssh/authorized_keys
 /link/.ssh/id_*
-/link/.ssh/known_hosts
+/link/.ssh/known_hosts*
+/link/.ssh/*.pem
 /link/.ssh/environment*
-
-# Don't commit Vim plugins, vim-plug will install them.
-/link/.vim/plugged
 
 /link/.fzf
 
-# Don't commit rbenv temp files.
-/link/.rbenv/shims/
-/link/.rbenv/versions/
-/link/.rbenv/version
+# Historyfiles
+/link/.vim/.netrwhist
+
 
 # Ignore any file with LOCAL in the name (good for per-machine vars/functions)
 *LOCAL*
