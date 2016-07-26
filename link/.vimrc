@@ -18,6 +18,7 @@ let g:airline_symbols.space = "\ua0"
 
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-commentary'
+NeoBundle 'tpope/vim-jdaddy'
 NeoBundle 'terryma/vim-expand-region'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-fugitive'
@@ -39,7 +40,7 @@ NeoBundle 'Shougo/vimproc.vim', {
 NeoBundle 'Shougo/unite.vim'
 " NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'edkolev/promptline.vim'
-NeoBundle 'Valloric/YouCompleteMe', {'build' : {'unix' : './install.sh --clang-completer', }, }
+NeoBundle 'Valloric/YouCompleteMe', {'build' : {'unix' : './install.py', }, }
 NeoBundle 'rking/ag.vim'
 NeoBundle 'vim-scripts/dbext.vim'
 
