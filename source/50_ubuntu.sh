@@ -68,3 +68,7 @@ fkill() {
 
 # Setting ag as the default source for fzf
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
+
+# enabling autojump see https://github.com/wting/autojump
+. /usr/share/autojump/autojump.sh
+

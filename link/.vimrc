@@ -17,6 +17,7 @@ let g:airline_symbols.space = "\ua0"
 
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-commentary'
+NeoBundle 'tpope/vim-jdaddy'
 NeoBundle 'terryma/vim-expand-region'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-fugitive'

@@ -50,6 +50,8 @@ packages=(
   iotop
   software-properties-common
   cmake
+  exuberant-ctags
+  autojump
   python-dev
 )
 
