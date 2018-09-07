@@ -1,7 +1,8 @@
 #
-mkdir -p $DOTFILES/link/powerline-shell
+#mkdir -p $DOTFILES/link/powerline-shell
 
-git clone https://github.com/milkbikis/powerline-shell $DOTFILES/link/powerline-shell
-cd $DOTFILES/link/powerline-shell
-python $DOTFILES/link/powerline-shell/install.py
+#git clone https://github.com/milkbikis/powerline-shell $DOTFILES/link/powerline-shell
+#cd $DOTFILES/link/powerline-shell
+#python $DOTFILES/link/powerline-shell/install.py
+pip install powerline-status
 

@@ -11,9 +11,16 @@
 # 31  41  red       35  45  magenta
 # 32  42  green     36  46  cyan
 # 33  43  yellow    37  47  white
-function _update_ps1() {
-    PS1="$(~/powerline-shell/powerline-shell.py $? 2> /dev/null)"
-}
+#function _update_ps1() {
+#    PS1="$(~/powerline-shell/powerline-shell.py $? 2> /dev/null)"
+#}
+
+if [ -f `which powerline-daemon` ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+fi
+source /usr/share/powerline/bindings/bash/powerline.sh
 
 #if [ "$TERM" != "linux" ]; then
 #  export  PROMPT_COMMAND="_update_ps1;"

@@ -53,6 +53,7 @@ packages=(
   exuberant-ctags
   autojump
   python-dev
+  pip
 )
 
 packages=($(setdiff "${packages[*]}" "$(dpkg --get-selections | grep -v deinstall | awk '{print $1}')"))
